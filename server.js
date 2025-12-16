@@ -5,8 +5,7 @@ const socketIo = require('socket.io');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
-
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;  // Add this line instead of const PORT = 3000;
 
 // Supported stocks
 const SUPPORTED_STOCKS = ['GOOG', 'TSLA', 'AMZN', 'META', 'NVDA'];
