@@ -22,6 +22,10 @@ SUPPORTED_STOCKS.forEach(stock => {
   stockHistory[stock] = [initialPrice]; // Start with one price
 });
 
+app.get("/", (req, res) => {
+  res.status(200).send("Stock Dashboard backend is running 🚀");
+});
+
 // Update prices every second
 setInterval(() => {
   SUPPORTED_STOCKS.forEach(stock => {
